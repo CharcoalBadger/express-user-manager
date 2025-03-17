@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+
+<% if (typeof errors !=="undefined" && errors.length> 0) { %>
+    <ul>
+        <% errors.forEach(error=> { %>
+            <li style="color: red;">
+                <%= error.msg %>
+            </li>
+            <% }); %>
+    </ul>
+    <% } %>
+
+
+
+            <form action="/<%= user.id %>/update" method="POST">
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName" id="firstName" value="<%= user.firstName %>" required>
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>" required>
+                <button type="submit">Update User</button>
+            </form>
+
+            <a href="/">Back to home</a>
+</body>
+
+</html>
