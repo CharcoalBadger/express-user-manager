@@ -11,6 +11,10 @@
     <h1>
         <%= title %>
     </h1>
+<form action="/search" method="GET">
+    <input type="text" name="q" placeholder="Search by name or email" />
+    <button type="submit">Search</button>
+</form>
 
     <ul>
         <% if (users.length) { %>

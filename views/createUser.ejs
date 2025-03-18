@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>
-        <%= title %>
-    </title>
-</head>
-
-<body>
-    <h1>
-        <%= title %>
-    </h1>
-
-<% if (typeof errors !=="undefined" && errors.length> 0) { %>
+<form action="/create" method="POST">
+    <input type="text" name="firstName" placeholder="First Name" required />
+    <input type="text" name="lastName" placeholder="Last Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="number" name="age" placeholder="Age (optional)" min="18" max="120" />
+    <textarea name="bio" placeholder="Bio (max 200 chars)"></textarea>
+    <button type="submit">Create User</button>
+</form>
+<% if (errors.length) { %>
     <ul>
         <% errors.forEach(error=> { %>
             <li style="color: red;">
                 <%= error.msg %>
             </li>
-            <% }); %>
+            <% }) %>
     </ul>
     <% } %>
-
-
-            <form action="/create" method="POST">
-                <label for="firstName">First Name: </label>
-                <input type="text" name="firstName" id="firstName" required>
-                <label for="lastName">Last Name: </label>
-                <input type="text" name="lastName" id="lastName" required>
-                <button type="submit">Submit</button>
-            </form>
-
-            <a href="/">Back to home</a>
-</body>
-
-</html>

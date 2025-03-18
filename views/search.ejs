@@ -1,0 +1,19 @@
+<h1>Search Users</h1>
+<form action="/search" method="get">
+    <input type="text" name="name" placeholder="Enter name">
+    <input type="email" name="email" placeholder="Enter email">
+    <button type="submit">Search</button>
+</form>
+
+<h2>Results:</h2>
+<ul>
+    <% users.forEach(user=> { %>
+        <li>
+            <strong>
+                <%= user.firstName %>
+                    <%= user.lastName %>
+            </strong> - <%= user.email %>
+                <br>Age: <%= user.age %> | Bio: <%= user.bio %>
+        </li>
+        <% }); %>
+</ul>

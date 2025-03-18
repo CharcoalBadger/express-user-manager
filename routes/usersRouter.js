@@ -7,6 +7,8 @@ usersRouter.get("/", usersController.usersListGet);
 usersRouter.get("/create", usersController.usersCreateGet);
 usersRouter.post("/create", usersController.usersCreatePost);
 
+usersRouter.get("/search", usersController.usersSearchGet); // 🔍 Search Route
+
 usersRouter.get("/:id/update", usersController.usersUpdateGet);
 usersRouter.post("/:id/update", usersController.usersUpdatePost);
 
